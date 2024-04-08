@@ -79,8 +79,8 @@ function App() {
           <h5 className="text-start ps-1 m-0 pb-2 text-black">¿Como consigo los descuentos exclusivos?</h5>
           <p className="text-black text-start ps-1 pt-1">¡Consigue los descuentos semanales y mensuales siguiendonos en nuestro Instagram o Facebook, donde publicamos impresionantes descuentos para tus compras!</p>
           <div className="d-flex extra-sign">
-            <Link to="/products?&category=5" className="btn btn-primary text-start d-block my-2 me-2">Ver nuestro Instagram</Link>
-            <Link to="/products?&category=5&order=product_descuent" className="btn btn-secondary text-start d-block my-2 me-2">Ver nuestro Facebook</Link>
+            <a href='https://instagram.com/tomasontivero10' target='_blank' className="btn btn-primary text-start d-block my-2 me-2">Ver nuestro Instagram</a>
+            <a href='https://instagram.com/tomasontivero10' target='_blank' className="btn btn-secondary text-start d-block my-2 me-2">Ver nuestro Facebook</a>
           </div>
         </div>
 
