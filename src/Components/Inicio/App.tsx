@@ -45,7 +45,7 @@ function App() {
           <h5 className="m-0 text-start text-black ps-1 pt-3">Comienza tu compra</h5>
           <div className="d-flex ps-1 extra-sign">
             <Link to="/products" className="btn btn-primary text-center d-block my-2 me-2">Ver productos</Link>
-            <Link to="/products" className="btn btn-secondary text-center d-block my-2 me-2">Conocenos</Link>
+            <Link to="/us" className="btn btn-secondary text-center d-block my-2 me-2">Conocenos</Link>
           </div>
 
         </div>

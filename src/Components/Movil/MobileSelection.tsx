@@ -28,7 +28,7 @@ export default function MobileSelectionComponent({ formInfo, setFormInfo, priceF
         <div className="order-search ">
           <span className="d-flex align-items-center p-1 rounded rounded-1">
             <i className="fa-solid fa-magnifying-glass text-black" />
-            <input type="search" value={formInfo.search_query} name="search_products" id="search_products" className="border-0 bg-transparent ps-2 w-100" autoFocus placeholder="Buscar productos" onChange={(e) => changeFormInfo("search_query", e.target.value, formInfo, setFormInfo)} />
+            <input type="search" name="search_products" id="search_products" className="border-0 bg-transparent ps-2 w-100" autoFocus placeholder="Buscar productos" onChange={(e) => changeFormInfo("search_query", e.target.value, formInfo, setFormInfo)} />
           </span>
         </div>
       )

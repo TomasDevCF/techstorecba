@@ -1,7 +1,7 @@
 import { useEffect, createContext, useState } from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './Components/Inicio/App.tsx'
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom'
+import { HashRouter, Route, Routes, useLocation } from 'react-router-dom'
 import Header from './Components/Other/Header.tsx'
 import Products from './Components/Productos/Products.tsx'
 import Us from './Components/Other/Us.tsx'
@@ -81,12 +81,12 @@ function Main() {
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
 
-  <Router>
+  <HashRouter>
     <CartProvider>
       <>
         <Header />
         <Main />
       </>
     </CartProvider>
-  </Router>,
+  </HashRouter>,
 )

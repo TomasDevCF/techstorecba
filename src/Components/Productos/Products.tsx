@@ -246,7 +246,7 @@ export default function Products() {
       fetch("https://techstorebackend.vercel.app/get/products" + fetchVisualDataQuery + `&limit=16&offset=${15 * (page - 1)}`) // * Fetch for obtain products data
         .then(r => r.json())
         .then(res => {
-          window.history.pushState({}, '', window.location.protocol + "//" + window.location.host + window.location.pathname + fetchVisualDataQuery);
+          window.history.pushState({}, '', window.location.protocol + "//" + window.location.host + window.location.pathname + fetchVisualDataQuery + window.location.hash);
           console.log(fetchVisualDataQuery, queryFromPriceAlgorithm)
           setData(res.result)
           setMaxPage(res.max_page)
