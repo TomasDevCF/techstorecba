@@ -24,7 +24,7 @@ export default function Header() {
     <>
       <header className="container-fluid d-flex justify-content-between align-items-center py-1">
         <div className="header-logo d-flex align-items-center col-4">
-          <img src="/public/techstore.jpg" className="logo rounded-5 " alt="Tech store Cordoba" />
+          <img src="/techstore.jpg" className="logo rounded-5 " alt="Tech store Cordoba" />
           <p className="px-2 text-black ">Tech Store Cordoba</p>
         </div>
         <nav className="d-flex col-4 justify-content-center">
