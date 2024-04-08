@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from "react"
-import { Link, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import { IProduct } from "../Inicio/App";
 import ListOfProductSkeleton from "../Skeleton/ListOfProductSkeleton";
 import Product from "./Product";
