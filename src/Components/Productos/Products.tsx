@@ -162,7 +162,7 @@ export default function Products() {
 
 
   useEffect(() => {
-    const queryParams = queryString.parseUrl(window.location.href).query;
+    const queryParams = queryString.parseUrl(window.location.href.replace("#", "")).query;
     setUrlQuery(queryParams);
   }, []);
 
@@ -246,7 +246,7 @@ export default function Products() {
       fetch("https://techstorebackend.vercel.app/get/products" + fetchVisualDataQuery + `&limit=16&offset=${15 * (page - 1)}`) // * Fetch for obtain products data
         .then(r => r.json())
         .then(res => {
-          window.history.pushState({}, '', window.location.protocol + "//" + window.location.host + window.location.pathname + fetchVisualDataQuery + window.location.hash);
+          window.history.pushState({}, '', window.location.protocol + "//" + window.location.host + window.location.pathname + fetchVisualDataQuery + window.location.hash.replace(fetchVisualDataQuery, ""));
           console.log(fetchVisualDataQuery, queryFromPriceAlgorithm)
           setData(res.result)
           setMaxPage(res.max_page)
@@ -266,9 +266,12 @@ export default function Products() {
       fetch(`https://techstorebackend.vercel.app/get/products?limit=16&offset=${15 * (page - 1)}`)
         .then(r => r.json())
         .then(res => {
-          console.log(res);
-          setData(res.result)
-          setMaxPage(res.max_page)
+
+          if (formInfo == defaultFormInfo) {
+            console.log(res);
+            setData(res.result)
+            setMaxPage(res.max_page)
+          }
         })
         .catch(err => console.error(err))
     }
@@ -314,7 +317,7 @@ export default function Products() {
           <img loading='lazy' src="/techstoreimg4.png" alt="" className="w-100 sign-image" />
         </div>
       </div>
-      
+
       <section className="products-section d-flex flex-column w-100 text-black px-5 py-3">
         <div className="order d-flex justify-content-between w-100 align-items-center">
           <b className="">Productos</b>

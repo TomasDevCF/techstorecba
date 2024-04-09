@@ -66,8 +66,7 @@ function App() {
           <p className="text-white text-start ps-1 pb-3 pt-1">Los relojes inteligentes o smartwatches son dispositivos portátiles que se llevan en la muñeca y ofrecen mucho más que simplemente mostrar la hora.</p>
           <h5 className="text-start ps-1 m-0 pb-2 text-white">Compra nuestros relojes</h5>
           <div className="d-flex  extra-sign">
-            <Link to="/products?&category=5" className="btn btn-secondary text-start d-block my-2 me-2">Ver relojes</Link>
-            <Link to="/products?&category=5&order=product_descuent" className="btn btn-dark text-start d-block my-2 me-2">Ver descuentos</Link>
+            <Link to={"/products"} className="btn btn-secondary text-start d-block my-2 me-2">Ver relojes</Link>
           </div>
         </div>
       </div>
