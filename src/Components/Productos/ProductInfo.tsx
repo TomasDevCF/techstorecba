@@ -68,7 +68,8 @@ export default function ProductInfo() {
     setSuggestionsData(newResponse)
   }
 
-  function addProduct() {
+  function addProduct(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
+    e.preventDefault()
     if (productData && images && priceWithDiscount) {
       const prevCart = localStorage.getItem("cart")
       const newProduct: CartProductInterface = {
@@ -150,8 +151,8 @@ export default function ProductInfo() {
           <p className="text-start fw-bold">Categoria: <b>{productData?.product_category.name}</b></p>
           <p className="text-start fw-bold">Marca:  <b>{productData?.product_brand.name}</b></p>
           <div className="d-flex flex-column flex-lg-row">
-            <a className="btn btn-primary my-2 me-lg-1 me-0 px-0 w-50" href="#"><i className="fab fa-whatsapp"></i> Comprar producto</a>
-            <a onClick={addProduct} className="btn btn-dark my-2 ms-lg-1 ms-0 px-0 w-50" href="#"><i className="far fa-cart-plus"></i> Agregar al carrito</a>
+            <a className="btn btn-primary my-2 me-lg-1 me-0 px-0 w-50" href=""><i className="fab fa-whatsapp"></i> Comprar producto</a>
+            <a onClick={(e) => addProduct(e)} className="btn btn-dark my-2 ms-lg-1 ms-0 px-0 w-50" href="#"><i className="far fa-cart-plus"></i> Agregar al carrito</a>
           </div>
           <div className="d-flex product-info-aclaration">
             <span className="d-block w-50"></span>

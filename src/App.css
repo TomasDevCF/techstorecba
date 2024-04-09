@@ -82,7 +82,7 @@ header nav a {
 }
 
 .cart {
-  height: calc(100vh - 59px);
+  height: -webkit-fill-available;
   right: 0;
   width: 450px;
   top: 59px;

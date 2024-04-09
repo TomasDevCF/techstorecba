@@ -314,6 +314,7 @@ export default function Products() {
           <img loading='lazy' src="/techstoreimg4.png" alt="" className="w-100 sign-image" />
         </div>
       </div>
+      
       <section className="products-section d-flex flex-column w-100 text-black px-5 py-3">
         <div className="order d-flex justify-content-between w-100 align-items-center">
           <b className="">Productos</b>

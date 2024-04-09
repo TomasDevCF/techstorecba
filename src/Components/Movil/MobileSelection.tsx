@@ -23,15 +23,6 @@ export default function MobileSelectionComponent({ formInfo, setFormInfo, priceF
           <Link to="/" onClick={(e) => changeFormInfo("order", "product_descuent", formInfo, setFormInfo, e)} className={`px-2 ${verifyValue("order", "product_descuent", "selected", "", formInfo)}`}>Descuentos</Link>
         </div>
       )
-    } else if (mobileSelection === "search") {
-      return (
-        <div className="order-search ">
-          <span className="d-flex align-items-center p-1 rounded rounded-1">
-            <i className="fa-solid fa-magnifying-glass text-black" />
-            <input type="search" name="search_products" id="search_products" className="border-0 bg-transparent ps-2 w-100" autoFocus placeholder="Buscar productos" onChange={(e) => changeFormInfo("search_query", e.target.value, formInfo, setFormInfo)} />
-          </span>
-        </div>
-      )
     } else if (mobileSelection === "filter") {
       return (
         <div className="d-flex justify-content-between px-1 fs-6 text-start mobile-filter">
@@ -125,6 +116,12 @@ export default function MobileSelectionComponent({ formInfo, setFormInfo, priceF
         <a href="#" onClick={(e) => changeMobileSelection(e, "search")}><i className="fa-solid fa-magnifying-glass"></i> Buscar</a>
       </div>
       <div className={`position-absolute w-100 mobile-selection z-2 bg-white py-2 border-top ${!mobileSelection ? "d-none" : ""}`}>
+        {mobileSelection === "search" && <div className="order-search px-3">
+          <span className="d-flex align-items-center p-1 rounded rounded-1">
+            <i className="fa-solid fa-magnifying-glass text-black" />
+            <input type="search" name="search_products" id="search_products" className="border-0 bg-transparent ps-2" placeholder="Buscar productos" autoFocus onChange={(e) => changeFormInfo("search_query", e.target.value, formInfo, setFormInfo)} />
+          </span>
+        </div>}
         <SelectFilter />
       </div>
     </>
