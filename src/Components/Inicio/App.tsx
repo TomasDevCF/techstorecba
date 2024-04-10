@@ -17,6 +17,13 @@ export interface IProduct {
   product_descuent: number
 }
 
+export interface IProductInfo {
+  product_id: number
+  product_name: string
+  product_price: number
+  product_descuent: number
+}
+
 function App() {
 
   return (

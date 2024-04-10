@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext } from "react"
 import {  useParams } from "react-router-dom";
-import { IProduct } from "../Inicio/App";
+import { IProduct, IProductInfo } from "../Inicio/App";
 import ListOfProductSkeleton from "../Skeleton/ListOfProductSkeleton";
 import Product from "./Product";
 import { formatStringWithPoints } from "./Products";
@@ -45,7 +45,7 @@ export default function ProductInfo() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
   const [priceWithDiscount, setPriceWithDiscount] = useState<null | number>(null)
 
-  const [suggestionsData, setSuggestionsData] = useState<IProduct[] | null>(null)
+  const [suggestionsData, setSuggestionsData] = useState<IProductInfo[] | null>(null)
 
   const { product_id } = useParams()
   const { setCart } = useContext(cartContext)
@@ -56,8 +56,8 @@ export default function ProductInfo() {
     }
   }
 
-  function filterSuggestions(res: IProduct[]) {
-    let newResponse: IProduct[] = []
+  function filterSuggestions(res: IProductInfo[]) {
+    let newResponse: IProductInfo[] = []
 
     for (let i = 0; i < res.length; i++) {
       if (product_id && res[i].product_id !== parseInt(product_id)) {
@@ -121,7 +121,7 @@ export default function ProductInfo() {
     if (productData && images) {
       fetch(`https://techstorebackend.vercel.app/get/products/?&category=${productData.product_category.id}&limit=3&offset=0&order=product_descuent&min_price=${productData.product_price - (productData.product_price / 2)}&max_price=${productData.product_price * 2}`)
         .then(r => r.json())
-        .then(res => filterSuggestions(res.result as IProduct[]))
+        .then(res => filterSuggestions(res.result as IProductInfo[]))
         .catch(err => console.error(err))
     }
   }, [productData, images])

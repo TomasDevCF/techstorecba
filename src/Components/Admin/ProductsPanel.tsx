@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import { IProduct } from "../Inicio/App";
+import { IProductInfo } from "../Inicio/App";
 import ProductsList from "../Productos/ProductsList";
 
 export default function ProductsPanel() {
-  const [data, setData] = useState<IProduct[] | null>(null)
+  const [data, setData] = useState<IProductInfo[] | null>(null)
   const [maxPage, setMaxPage] = useState<number | null>(null)
   const [page, setPage] = useState<number>(1)
   const [category, setCategory] = useState<string>("")

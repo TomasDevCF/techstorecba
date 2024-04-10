@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { IProduct } from "../Inicio/App";
+import { IProductInfo } from "../Inicio/App";
 import PriceFilterSkeleton from "../Skeleton/PriceFilterSkeleton";
 import MobileSelection from "../Movil/MobileSelection";
 import ProductsList from "./ProductsList";
@@ -122,14 +122,14 @@ export default function Products() {
 
   const [formInfo, setFormInfo] = useState<IFormInfo>(defaultFormInfo)
   const [priceFilter, setPriceFilter] = useState<IPriceFilter>(defaultPriceFilter)
-  const [data, setData] = useState<IProduct[] | null>(null)
+  const [data, setData] = useState<IProductInfo[] | null>(null)
   const [page, setPage] = useState<number>(1)
   const [urlQuery, setUrlQuery] = useState<any>(null);
   const [maxPage, setMaxPage] = useState<number | null>(null)
 
   const location = useLocation()
 
-  function priceFilterAlgorithm(r: IProduct[]) {
+  function priceFilterAlgorithm(r: IProductInfo[]) {
     console.log(r)
     const productsCount = r.length
     const x = Math.floor(productsCount / 4)
@@ -146,7 +146,7 @@ export default function Products() {
 
   }
 
-  function obtainMaxPriceFilter(x: number, r: IProduct[], multiplier: number = 1): number {
+  function obtainMaxPriceFilter(x: number, r: IProductInfo[], multiplier: number = 1): number {
     const TempMaxPrice = r[x].product_price * multiplier
     const leftPartOfMaxPrice = TempMaxPrice.toString().substring(0, 2)
 
