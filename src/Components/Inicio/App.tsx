@@ -25,9 +25,8 @@ export interface IProductInfo {
 }
 
 function App() {
-
   return (
-    <main>
+    <main className="d-flex flex-column align-items-center">
       <div className="sign-container position-relative px-5 pt-5 py-3 d-flex">
         <div className=" pt-3">
           <ol className="breadcrumb m-0">

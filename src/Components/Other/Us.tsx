@@ -3,8 +3,8 @@ export default function Us() {
     <main className="pt-5">
       <h2 className="pt-5 m-0">Nosotros: Tu Socio Tecnológico</h2>
       <p className="fs-4">Innovación a tu Alcance</p>
-      <div className="us py-3">
-        <section className="">
+      <div className="us py-3 d-flex justify-content-center">
+        <section style={{ maxWidth: "1700px" }}>
           <div className="sign-container bg-white position-relative px-5 pt-5 py-3 d-flex">
             <div className=" pt-3">
               <h1 className="fs-4 text-start m-0 ps-1 text-black">¿Quiénes Somos?</h1>
@@ -19,7 +19,7 @@ export default function Us() {
             </div>
           </div>
           <div className="sign-container bg-white position-relative px-5 pt-5 py-3 d-flex flex-column-reverse flex-lg-row">
-          <div className=" overflow-hidden h-100 px-5">
+            <div className=" overflow-hidden h-100 px-5">
               <img loading='lazy' src="/techstoreimg6.jpg" alt="" className="w-100" />
             </div>
             <div className=" pt-3">

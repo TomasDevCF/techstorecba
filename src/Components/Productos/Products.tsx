@@ -287,7 +287,7 @@ export default function Products() {
   }, [location, formInfo, page]);
 
   return (
-    <main className="w-100">
+    <main className="w-100 d-flex flex-column align-items-center" style={{ background: "#f1f1f1" }}>
       <div className="sign-container position-relative px-5 pt-5 py-3 d-flex">
         <div className="pt-3">
           <ol className="breadcrumb m-0 pb-2">

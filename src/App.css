@@ -120,9 +120,11 @@ header nav a {
   right: 0;
   background: #ededed;
   align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
-.sign-container > div {
+.sign-container>div {
   width: 50%;
 }
 
@@ -144,7 +146,7 @@ header nav a {
 
 .sign-text-container {
   backdrop-filter: blur(3px);
-  background-color: rgba(255, 255, 255, 0.101) !important
+  background-color: rgba(255, 255, 255, 0.101) !important;
 }
 
 .sign-text-container p {
@@ -157,6 +159,7 @@ header nav a {
 
 .products-section {
   background: #f1f1f1;
+  max-width: 1800px;
 }
 
 .product-container {
@@ -521,6 +524,10 @@ a:hover {
   top: 45px;
 }
 
+.padding-container {
+  max-width: 270px;
+}
+
 @media (max-width: 1160px) {
   header a i {
     display: none !important;
@@ -529,7 +536,7 @@ a:hover {
 
 @media (max-width: 935px) {
   .header-logo p {
-    display:none
+    display: none
   }
 
   .product-info-aclaration span {
@@ -542,22 +549,24 @@ a:hover {
 }
 
 @media (max-width: 1124px) {
-  .image-sign-container{
+  .image-sign-container {
     object-fit: cover !important;
     aspect-ratio: 1 / 1 !important;
     width: 70% !important;
   }
+
   .sign-container {
     flex-direction: column;
     height: auto !important;
   }
-  .sign-container > div {
+
+  .sign-container>div {
     width: 75%;
   }
 }
 
 @media (max-width: 800px) {
-  .sign-container > div {
+  .sign-container>div {
     width: 100%;
     padding: 0 5px;
   }
@@ -575,7 +584,7 @@ a:hover {
   .product-discount-price {
     font-size: 11.5px;
   }
-  
+
   .product-price {
     font-size: 14px !important;
     color: red !important;
@@ -625,7 +634,7 @@ a:hover {
 
 @media (max-width: 500px) {
   header a i {
-    display: inline !important; 
+    display: inline !important;
   }
 
   header a span {
@@ -636,7 +645,8 @@ a:hover {
     width: 33.3333333% !important;
   }
 
-  .header-cart, .header-logo {
+  .header-cart,
+  .header-logo {
     width: 25% !important;
   }
 
@@ -648,7 +658,7 @@ a:hover {
     width: 100vw;
   }
 
-  
+
 }
 
 @media (max-width: 396px) {
@@ -663,7 +673,7 @@ a:hover {
     align-items: center !important;
   }
 
-  .mobile-filter > div {
+  .mobile-filter>div {
     width: 75%;
     text-align: center !important;
     padding-top: 10px;
@@ -684,7 +694,7 @@ a:hover {
     padding: 25px 0 !important;
   }
 
-  .product-info-page > div {
+  .product-info-page>div {
     width: 100% !important;
   }
 
@@ -699,7 +709,7 @@ a:hover {
     padding: 25px 0 !important;
   }
 
-  .product-info-page > div {
+  .product-info-page>div {
     width: 100% !important;
   }
 

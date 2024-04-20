@@ -11,7 +11,7 @@ export default function ProductSkeleton({ className }: Props) {
         width="100%"
         backgroundColor={'#c5c5c5'}
         foregroundColor={'#999'}
-        style={{borderBottomLeftRadius: 0, borderBottomRightRadius: 0, aspectRatio: "7 / 9"}}
+        style={{ borderBottomLeftRadius: 0, borderBottomRightRadius: 0, aspectRatio: "7 / 9" }}
         className="product-container p-0"
         speed={2}
         title='Cargando...'
