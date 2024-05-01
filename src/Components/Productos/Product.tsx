@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { formatStringWithPoints } from "./Products"
 
@@ -14,25 +13,11 @@ export default function Product({ discount, product_id, name, price, className }
 
   const priceWithDiscount = Math.floor(price - (price * (discount / 100)))
 
-  const [imageURL, setImageURL] = useState<string | null>(null)
-
-  useEffect(() => {
-    fetch(`https://techstorebackend.vercel.app/get/images/${product_id}/1/0`)
-      .then(async res => {
-        console.log(res)
-        const blob = await res.blob();
-        const imgUrl = URL.createObjectURL(blob);
-
-        setImageURL(imgUrl);
-      })
-      .catch(err => console.error(err))
-  }, []);
-
   return (
     <Link to={`/product/${product_id}`} className={`d-block padding-container px-2 py-3 ${className ? className : "col-3"}`}>
       <div className="product-container d-flex position-relative flex-column w-100 p-0 justify-content-between">
         {discount > 0 && <p className="text-white bg-danger position-absolute discount-text">{discount}%</p>}
-        {imageURL ? <img loading="lazy" src={imageURL} alt={name} /> : <div className="load-img"></div>}
+        <img loading="lazy" src={`https://techstorebackend.vercel.app/get/images/${product_id}/1/0`} alt={name} />
         <div className="product-info-card d-flex flex-column align-items-center">
           <p className="px-2 product-name">{name}</p>
           <div className="d-flex justify-content-around align-items-end">

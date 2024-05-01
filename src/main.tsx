@@ -46,10 +46,6 @@ function CartProvider({ children }: Props) {
 
   const value = { cart, setCart }
 
-  useEffect(() => {
-    console.log(cart)
-  }, [cart])
-
   return (
     <cartContext.Provider value={value}>{children}</cartContext.Provider>
   )

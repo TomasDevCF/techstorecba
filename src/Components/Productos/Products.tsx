@@ -130,7 +130,6 @@ export default function Products() {
   const location = useLocation()
 
   function priceFilterAlgorithm(r: IProductInfo[]) {
-    console.log(r)
     const productsCount = r.length
     const x = Math.floor(productsCount / 4)
 
@@ -167,7 +166,6 @@ export default function Products() {
   }, []);
 
   useEffect(() => {
-    console.log(urlQuery && JSON.stringify(urlQuery) != "{}" && JSON.stringify(formInfo) === JSON.stringify(defaultFormInfo))
     if (urlQuery && JSON.stringify(urlQuery) != "{}" && JSON.stringify(formInfo) === JSON.stringify(defaultFormInfo)) {
       const newFormInfo: IFormInfo = defaultFormInfo;
       for (let key in urlQuery) {
@@ -192,18 +190,15 @@ export default function Products() {
             break;
         }
       }
-      console.log(newFormInfo)
       setFormInfo(newFormInfo);
     }
   }, [urlQuery]);
 
   useEffect(() => {
     let queryFromPriceAlgorithm = "?"
-    console.log(formInfo, urlQuery)
 
     if (formInfo != defaultFormInfo) {
       let fetchVisualDataQuery = "?"
-      console.log(formInfo)
       for (let key in formInfo) {
         if (formInfo[key as keyof IFormInfo] !== defaultFormInfo[key as keyof IFormInfo]) {
           switch (key as keyof IFormInfo) {
@@ -247,7 +242,6 @@ export default function Products() {
         .then(r => r.json())
         .then(res => {
           window.history.pushState({}, '', window.location.protocol + "//" + window.location.host + window.location.pathname + fetchVisualDataQuery + window.location.hash.replace(fetchVisualDataQuery, ""));
-          console.log(fetchVisualDataQuery, queryFromPriceAlgorithm)
           setData(res.result)
           setMaxPage(res.max_page)
         })
@@ -255,7 +249,6 @@ export default function Products() {
 
 
     } else {
-      console.log(formInfo)
       fetch("https://techstorebackend.vercel.app/get/products?limit=100&offset=0&order=product_price%20ASC")
         .then(r => r.json())
         .then(res => {
@@ -268,7 +261,6 @@ export default function Products() {
         .then(res => {
 
           if (formInfo == defaultFormInfo) {
-            console.log(res);
             setData(res.result)
             setMaxPage(res.max_page)
           }
@@ -294,10 +286,10 @@ export default function Products() {
             <Link to="/" className="breadcrumb-item">Inicio</Link>
             <li className="breadcrumb-item active">Productos</li>
           </ol>
-          <h1 className="fs-4 text-start m-0 ps-1 text-black">Bienvenido a nuestro catalogo</h1>
+          <h1 className="fs-4 text-start m-0 ps-1 text-black">Bienvenido a nuestro catálogo</h1>
           <p className="text-black text-start ps-1 py-3">En <b>Tech Store Córdoba</b>, te damos la bienvenida a un mundo de tecnología y accesorios. Explora nuestra amplia selección de productos electrónicos y mucho más.</p>
 
-          <h5 className="text-start ps-1 m-0 pb-2">¿Qué espero de este catálogo?</h5>
+          <h2 className="text-start fs-5 ps-1 m-0 pb-2">¿Qué espero de este catálogo?</h2>
           <div className="d-flex">
             <div className="d-flex extra-sign flex-column px-1 text-start">
               <span className="text-black"><i className="fa-solid fa-filter"></i> Filtrado por dispositivo</span>
@@ -310,7 +302,7 @@ export default function Products() {
 
           </div>
 
-          <h5 className="m-0 text-start text-black ps-1 pt-3">¡Comienza con tu compra!</h5>
+          <h2 className="m-0 text-start text-black ps-1 fs-5 pt-3">¡Comienza con tu compra!</h2>
 
         </div>
         <div className=" image-sign-container overflow-hidden h-100">
@@ -320,7 +312,7 @@ export default function Products() {
 
       <section className="products-section d-flex flex-column w-100 text-black px-5 py-3">
         <div className="order d-flex justify-content-between w-100 align-items-center">
-          <b className="">Productos</b>
+          <b>Productos</b>
           <div className="order-options">
             <Link to="/" onClick={(e) => changeFormInfo("order", "", formInfo, setFormInfo, e)} className={`px-2 ${verifyValue("order", "", "selected", "", formInfo)}`}>No ordenar</Link>
             <Link to="/" onClick={(e) => changeFormInfo("order", "product_price DESC", formInfo, setFormInfo, e)} className={`px-2 ${verifyValue("order", "product_price DESC", "selected", "", formInfo)}`}>Mayor precio</Link>

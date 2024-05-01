@@ -65,12 +65,12 @@ function App() {
           <img loading='lazy' src="/techstoreimg3.png" alt="Mackbook pro" className="w-100 pe-5" />
         </div>
         <div className="">
-          <h1 className="fs-4 text-start m-0 ps-1 text-white">Explora las nuevas Tecnologías</h1>
+          <h2 className="fs-4 text-start m-0 ps-1 text-white">Explora las nuevas Tecnologías</h2>
           <p className="text-white text-start ps-1 py-3">En nuestra tienda, destacamos los productos más innovadores y vanguardistas que ofrecemos en Tech Store Córdoba. Desde dispositivos comunes hasta relojes inteligentes, invitaremos a los visitantes a explorar la tecnología que está transformando nuestras vidas.</p>
 
-          <h5 className="text-start ps-1 m-0 pb-2 text-white">¿Que son los smartwatches?</h5>
+          <h3 className="text-start ps-1 m-0 pb-2 fs-5 text-white">¿Que son los smartwatches?</h3>
           <p className="text-white text-start ps-1 pb-3 pt-1">Los relojes inteligentes o smartwatches son dispositivos portátiles que se llevan en la muñeca y ofrecen mucho más que simplemente mostrar la hora.</p>
-          <h5 className="text-start ps-1 m-0 pb-2 text-white">Compra nuestros relojes</h5>
+          <h3 className="text-start ps-1 m-0 pb-2 fs-5 text-white">Compra nuestros relojes</h3>
           <div className="d-flex  extra-sign">
             <Link to={"/products"} className="btn btn-secondary text-start d-block my-2 me-2">Ver relojes</Link>
           </div>
@@ -78,10 +78,10 @@ function App() {
       </div>
       <div className="sign-container position-relative px-5 py-3 d-flex">
         <div className="">
-          <h1 className="fs-4 text-start m-0 ps-1 text-black">Ofertas y descuentos especiales</h1>
+          <h2 className="fs-4 text-start m-0 ps-1 text-black">Ofertas y descuentos especiales</h2>
           <p className="text-black text-start ps-1 py-3">Resaltaremos las promociones exclusivas que Tech Store Córdoba ofrece a sus clientes. Desde descuentos en productos hasta paquetes especiales, queremos que los visitantes se sientan tentados a comprar con nosotros.</p>
 
-          <h5 className="text-start ps-1 m-0 pb-2 text-black">¿Como consigo los descuentos exclusivos?</h5>
+          <h3 className="text-start ps-1 m-0 pb-2 fs-5 text-black">¿Como consigo los descuentos exclusivos?</h3>
           <p className="text-black text-start ps-1 pt-1">¡Consigue los descuentos semanales y mensuales siguiendonos en nuestro Instagram o Facebook, donde publicamos impresionantes descuentos para tus compras!</p>
           <div className="d-flex extra-sign">
             <a href='https://instagram.com/tomasontivero10' target='_blank' className="btn btn-primary text-start d-block my-2 me-2">Ver nuestro Instagram</a>

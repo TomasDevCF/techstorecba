@@ -60,7 +60,6 @@ export default function AddPanel() {
                 const product_id = data.result[0].product_id
 
                 if (imagesFile) {
-                  console.log(imagesFile);
 
                   for (let i = 0; i < imagesFile.length; i++) {
                     const formData = new FormData()
@@ -143,7 +142,6 @@ export default function AddPanel() {
 
 
   useEffect(() => {
-    console.log(imagesPreview.length);
 
     if (imagesPreview.length > 4) {
       setImagesPreview(imagesPreview.slice(0, 4))

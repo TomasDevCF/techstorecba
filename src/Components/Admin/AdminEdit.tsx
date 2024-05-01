@@ -55,7 +55,6 @@ export default function AdminEdit() {
   }
 
   useEffect(() => {
-    console.log(imagesPreview.length);
 
     if (imagesPreview.length > 4) {
       setImagesPreview(imagesPreview.slice(0, 4))
@@ -63,7 +62,6 @@ export default function AdminEdit() {
   }, [imagesPreview]);
 
   useEffect(() => {
-    console.log(product_id)
     fetch(`https://techstorebackend.vercel.app/get/product/${product_id}`)
       .then(res => res.json())
       .then((r: IProduct) => {
