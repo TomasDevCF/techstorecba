@@ -1,4 +1,4 @@
 User-agent: *
-Allow: /
+Disallow:
 
 Sitemap: https://techstorecba.vercel.app/sitemap-index.xml
